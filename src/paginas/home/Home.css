@@ -3,14 +3,14 @@
 }
 
 .titulo{
-    color:white ;
+    color:black ;
     font-weight: bold;
 }
 
 .botao{
-        border-color: white  ;
-        background-color: 3F51B5;
-        color: white ;
+    border-color: rgb(91, 63, 117)  ;
+    background-color: blue;
+    color: brown ;
 }
 
 .postagens{
