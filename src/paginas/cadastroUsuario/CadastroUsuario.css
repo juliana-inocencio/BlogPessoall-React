@@ -1,9 +1,9 @@
 .imagem2{
-    background-image: url(https://i.imgur.com/7U5Qpii.jpeg);
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/760/955/638/artwork-landscape-sky-mountains-wallpaper-preview.jpg);
     background-repeat: 'no-repeat';
     width: 100vh;
     min-height: 60vh;
-    background-size: cover;
+    background-size: auto;
     background-position: center;
 }
 

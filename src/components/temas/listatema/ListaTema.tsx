@@ -20,7 +20,7 @@ import { busca } from '../../../services/Service';
     }, [token] )
 
 async function getTema(){
-    await busca("/tema", setTemas, {
+    await busca("/temas", setTemas, {
         headers:{
             'Authorization': token
         }

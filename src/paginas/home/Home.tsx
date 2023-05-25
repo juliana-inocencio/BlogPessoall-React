@@ -1,10 +1,25 @@
-  import React from 'react';
+  import React, { useEffect } from 'react';
   import { Grid, Typography, Button,  } from "@material-ui/core";
   import { Box } from "@mui/material";
   import './Home.css';
   import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
   function Home(){
+
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          navigate("/login")
+  
+      }
+  }, [token])
+    
       return(
           <> 
             <Grid
@@ -38,7 +53,9 @@
                 </Typography>
               </Box>
               <Box display="flex" justifyContent="center">
-                <Box marginRight={1}></Box>
+                <Box marginRight={1}>
+                <ModalPostagem />
+                </Box>
                 <Button
                   variant="contained" 
                   className="botao"
@@ -49,7 +66,7 @@
             </Grid>
             <Grid item xs={5} style={{ margin: "10px" }}>
               <img
-                src="https://c4.wallpaperflare.com/wallpaper/586/603/742/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg"
+                src="https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-preview.jpg"
                 alt=""
                 width="600px"
                 height="400px"

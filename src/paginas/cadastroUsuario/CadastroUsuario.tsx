@@ -66,7 +66,7 @@ function CadastroUsuario(){
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>
                                 Cadastrar
                             </Typography>
-                            <TextField value={usuario.nome} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' type='password' fullWidth/>
+                            <TextField value={usuario.nome} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' type='text' fullWidth/>
                             <TextField value={usuario.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth/>
                             <TextField value={usuario.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
                             <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth/>
