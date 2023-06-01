@@ -8,6 +8,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 
+
+function Footer(){
 const token = useSelector<TokenState, TokenState["tokens"]>(
   (state) => state.tokens
 );  
@@ -15,7 +17,7 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
 var footerComponent;
 
 if (token != ""){
-  footerComponent = <Grid
+  footerComponent = (<Grid
       container
       direction="row"
       justifyContent="center"
@@ -77,16 +79,16 @@ if (token != ""){
         </Box>
       </Grid>
     </Grid>
-})
+);
 
+}
 
-function Footer() {
   return (
     <>
     {footerComponent}
   </>
-);
-}
+  )
+  }
 
 
 export default Footer;
