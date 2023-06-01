@@ -4,6 +4,7 @@ import Tema from '../../../models/Tema';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, post, put } from '../../../services/Service';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
@@ -18,7 +19,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisar estar logado',{
+                position:"top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history("/login")
     
         }
@@ -58,14 +68,34 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso');
+                toast.success('Tema atualizado com sucesso',{
+                    position:"top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+
+
             } else {
                 post(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Tema cadastrado com sucesso');
+                toast.success('Tema cadastrado com sucesso',{
+                    position:"top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
             back()
     
