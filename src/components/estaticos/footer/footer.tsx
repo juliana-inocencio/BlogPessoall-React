@@ -5,11 +5,17 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import GitHubIcon from "@material-ui/icons/GitHub";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokenReducer";
 
-function Footer() {
-  return (
-    <>
-    <Grid
+const token = useSelector<TokenState, TokenState["tokens"]>(
+  (state) => state.tokens
+);  
+
+var footerComponent;
+
+if (token != ""){
+  footerComponent = <Grid
       container
       direction="row"
       justifyContent="center"
@@ -71,6 +77,13 @@ function Footer() {
         </Box>
       </Grid>
     </Grid>
+})
+
+
+function Footer() {
+  return (
+    <>
+    {footerComponent}
   </>
 );
 }
